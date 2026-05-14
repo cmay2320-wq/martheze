@@ -1,0 +1,504 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4faff;
+    color: #0d1b2a;
+    overflow-x: hidden;
+}
+
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eaf7ff, #b9e1ff, #f8fbff);
+    position: relative;
+    padding: 25px 8%;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: rgba(0, 119, 255, 0.15);
+    border-radius: 50%;
+    top: 120px;
+    right: -120px;
+    filter: blur(20px);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: rgba(255, 174, 0, 0.18);
+    border-radius: 50%;
+    bottom: -100px;
+    left: -80px;
+    filter: blur(25px);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand img {
+    width: 90px;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.brand h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #003b70;
+}
+
+.navlinks a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #0d1b2a;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navlinks a:hover {
+    color: #0077ff;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 50px;
+    align-items: center;
+    min-height: 80vh;
+    position: relative;
+    z-index: 3;
+}
+
+.badge {
+    display: inline-block;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #0077ff;
+    font-weight: 700;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.hero-text h1 {
+    font-size: clamp(45px, 7vw, 82px);
+    line-height: 1;
+    color: #04294d;
+    margin-bottom: 20px;
+    animation: slideUp 1s ease;
+}
+
+.slogan {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ff9f00;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    max-width: 650px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.primary {
+    background: linear-gradient(135deg, #0077ff, #00b4ff);
+    color: white;
+    box-shadow: 0 12px 25px rgba(0,119,255,0.35);
+}
+
+.secondary {
+    background: white;
+    color: #0077ff;
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.03);
+}
+
+.hero-card {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(15px);
+    padding: 35px;
+    border-radius: 30px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+    animation: float 4s ease-in-out infinite;
+}
+
+.hero-card h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #003b70;
+}
+
+.hero-card p {
+    background: #eef8ff;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+.section {
+    padding: 90px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 45px;
+    color: #003b70;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #4b647a;
+    margin-bottom: 45px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.service-card {
+    background: white;
+    padding: 28px;
+    border-radius: 24px;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    transition: 0.35s;
+    border: 2px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+    border-color: #00a6ff;
+    box-shadow: 0 25px 50px rgba(0,119,255,0.22);
+}
+
+.about {
+    margin: 40px 8%;
+    padding: 70px;
+    border-radius: 35px;
+    background: linear-gradient(135deg, #003b70, #0077ff);
+    color: white;
+    box-shadow: 0 25px 60px rgba(0,119,255,0.25);
+}
+
+.about h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.gallery-item {
+    height: 250px;
+    background: linear-gradient(135deg, #dff2ff, #ffffff);
+    border: 3px dashed #77c9ff;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: #0077ff;
+    transition: 0.35s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 25px 50px rgba(0,119,255,0.2);
+}
+
+.contact {
+    padding: 90px 8%;
+    text-align: center;
+    background: linear-gradient(135deg, #eaf7ff, #ffffff);
+}
+
+.contact h2 {
+    font-size: 45px;
+    color: #003b70;
+}
+
+.contact p {
+    margin: 12px 0;
+}
+
+.contact-box {
+    background: white;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+}
+
+.floating-whatsapp {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 65px;
+    height: 65px;
+    background: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    z-index: 20;
+    animation: pulse 2s infinite;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #00213d;
+    color: white;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        transform: scale(1.07);
+        box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.8s;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 850px) {
+    .navlinks {
+        display: none;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        padding-top: 60px;
+    }
+
+    .hero-text h1 {
+        font-size: 48px;
+    }
+
+    .about {
+        padding: 40px 25px;
+    }
+
+    .about h2 {
+        font-size: 32px;
+    }
+
+    .brand img {
+        width: 70px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 20px 5%;
+        min-height: auto;
+    }
+
+    .navbar {
+        align-items: flex-start;
+    }
+
+    .brand h2 {
+        font-size: 22px;
+    }
+
+    .brand img {
+        width: 65px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 38px;
+        line-height: 1.1;
+    }
+
+    .slogan {
+        font-size: 18px;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-card {
+        padding: 25px;
+        border-radius: 22px;
+    }
+
+    .section {
+        padding: 60px 5%;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .service-card {
+        padding: 22px;
+        font-size: 18px;
+    }
+
+    .about {
+        margin: 25px 5%;
+        padding: 35px 22px;
+        text-align: center;
+    }
+
+    .about h2 {
+        font-size: 28px;
+    }
+
+    .about p {
+        font-size: 15px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 210px;
+    }
+
+    .contact {
+        padding: 60px 5%;
+    }
+
+    .contact h2 {
+        font-size: 32px;
+    }
+
+    .contact-box {
+        padding: 22px;
+    }
+
+    .floating-whatsapp {
+        width: 58px;
+        height: 58px;
+        font-size: 26px;
+        right: 18px;
+        bottom: 18px;
+    }
+
+    footer {
+        font-size: 13px;
+        padding: 20px 10px;
+    }
+}
